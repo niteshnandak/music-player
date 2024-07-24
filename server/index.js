@@ -16,7 +16,7 @@ const connect = () =>{
     });
 };
 
-app.use("");
+app.use("")
 
 app.listen(8800,() => {
     connect()
