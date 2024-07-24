@@ -1,6 +1,8 @@
 import express from "express"
-import {  } from "../controllers/usercontroller.js";
+import {  } from "../controllers/authcontroller.js";
 
 const router = express.Router();
+
+
 
 export default router;
