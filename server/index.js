@@ -1,6 +1,7 @@
 import express from "express"
 import mongoose from "mongoose"
 import dotenv from "dotenv"
+import userRoutes from "./routes/users.js"
 
 const app = express();
 dotenv.config();
@@ -14,6 +15,8 @@ const connect = () =>{
         throw err;
     });
 };
+
+app.use("")
 
 app.listen(8800,() => {
     connect()
