@@ -18,21 +18,32 @@ export const update = async (req, res, next) =>{
         return next(createError (403, "You can update only your account!"))
     }
 };
-export const remove = (req, res, next) =>{
+export const remove = async (req, res, next) =>{
+    if(req.params.id === req.user.id){
+        try{
+             await User.findByIdAndDelete(
+                req.params.id,
+        );
+            res.status(200).json("User Deleted Successfully");
+        } catch(err) {
+            next(err);
+        }
+    } else {
+        return next(createError (403, "You can delete only your account!"))
+    }
+};
+export const getUser = async (req, res, next) =>{
     
 };
-export const getUser = (req, res, next) =>{
+export const subscribe = async (req, res, next) =>{
     
 };
-export const subscribe = (req, res, next) =>{
+export const unsubscribe = async (req, res, next) =>{
     
 };
-export const unsubscribe = (req, res, next) =>{
+export const like = async (req, res, next) =>{
     
 };
-export const like = (req, res, next) =>{
-    
-};
-export const dislike = (req, res, next) =>{
+export const dislike = async (req, res, next) =>{
     
 };
