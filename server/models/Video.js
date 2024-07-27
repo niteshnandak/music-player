@@ -19,12 +19,12 @@ const VideoSchema = new mongoose.Schema(
       required: true,
     },
     videoUrl: {
-      type: Number,
+      type: String,
       required: true,
     },
     views: {
         type: String,
-        required: true,
+        default: 0,
       },
     tags: {
       type: [String],

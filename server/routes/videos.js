@@ -14,6 +14,6 @@ router.put("/view/:id", addView)
 // to display the trending videos, random videos, subscribed channel videos
 router.get("/trend/", trend)
 router.get("/random/", random)
-router.get("/sub/", subscribe)
+router.get("/sub/", verifyToken, subscribe)
 
 export default router;
